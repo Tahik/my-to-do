@@ -24,3 +24,20 @@ button {
     border-radius: 5px;
     color: cornflowerblue;
  }
+
+ li{
+    
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+ }
+
+ span {
+     border: 3px solid green;
+     padding: 5px;
+     margin-right: 15px;
+     background-color: white;
+     border-radius: 5px;
+     width: 350px;
+}
