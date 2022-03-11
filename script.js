@@ -39,29 +39,32 @@ ulDiv.appendChild(ul);
 
 const addToDo =(e) => {
     e.preventDefault();
+
+    // value of text input
     const value = inputFieldForm.querySelector('input[type="text"]').value;
     console.log(value);
 
+    // li element
     const li = document.createElement('li');
     li.setAttribute('class', 'to-do-li-class')
 
+    // content of To Do
     const toDoText = document.createElement('span');
     toDoText.textContent = value;
     toDoText.setAttribute('class', 'to-do-text-class');
 
+    // delete button
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
     deleteButton.setAttribute('class', 'delete-=to-do-button-class');
 
     // delete to do function
-
     const deleteToDo = (e) => {
         e.preventDefault();
         li.parentNode.removeChild(li);
     }
 
     // event listener for delete Button
-
     deleteButton.addEventListener('click', deleteToDo);
 
     // append elements to DOM
