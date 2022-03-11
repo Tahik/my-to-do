@@ -13,7 +13,6 @@ inputFieldForm.setAttribute('id', 'input-field-form-id');
 document.body.appendChild(inputFieldForm);
 
 // input field
-
 const inputField = document.createElement('input');
 inputField.setAttribute('type', 'text');
 inputField.setAttribute('name', 'input-field-name');
@@ -21,21 +20,54 @@ inputField.setAttribute('id', 'input-field-id');
 inputFieldForm.appendChild(inputField);
 
 // add button
-
 const addButton = document.createElement('button');
 addButton.setAttribute('class', 'add-button-class');
 addButton.textContent ='Add To Do!';
 inputFieldForm.appendChild(addButton);
 
 // ul div
-
 const ulDiv = document.createElement('div');
 ulDiv.setAttribute('class', 'ul-div-class');
 document.body.appendChild(ulDiv);
 
 // ul
-
 const ul = document.createElement('ul');
 ul.setAttribute('class', 'to-do-ul-class');
 ulDiv.appendChild(ul);
 
+// add text input and delete buton function
+
+const addToDo =(e) => {
+    e.preventDefault();
+    const value = inputFieldForm.querySelector('input[type="text"]').value;
+    console.log(value);
+
+    const li = document.createElement('li');
+    li.setAttribute('class', 'to-do-li-class')
+
+    const toDoText = document.createElement('span');
+    toDoText.textContent = value;
+    toDoText.setAttribute('class', 'to-do-text-class');
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.setAttribute('class', 'delete-=to-do-button-class');
+
+    // delete to do function
+
+    const deleteToDo = (e) => {
+        e.preventDefault();
+        li.parentNode.removeChild(li);
+    }
+
+    // event listener for delete Button
+
+    deleteButton.addEventListener('click', deleteToDo);
+
+    // append elements to DOM
+    li.appendChild(toDoText);
+    li.appendChild(deleteButton);
+    ul.appendChild(li);
+}
+
+inputFieldForm.addEventListener('submit', addToDo);
