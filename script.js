@@ -17,6 +17,8 @@ const inputField = document.createElement('input');
 inputField.setAttribute('type', 'text');
 inputField.setAttribute('name', 'input-field-name');
 inputField.setAttribute('id', 'input-field-id');
+inputField.setAttribute('minlength', '2');
+inputField.setAttribute('required', 'true')
 inputFieldForm.appendChild(inputField);
 
 // add button
