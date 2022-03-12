@@ -73,4 +73,13 @@ const addToDo =(e) => {
     ul.appendChild(li);
 }
 
+// clear input field after submit
+ 
+const clearInput = () => {
+    const value = inputFieldForm.querySelector('input[type="text"]')
+    value.value = '';
+
+}
+
 inputFieldForm.addEventListener('submit', addToDo);
+inputFieldForm.addEventListener('submit', clearInput);
